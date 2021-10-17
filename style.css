@@ -120,3 +120,92 @@
   background-color: rgb(226, 237, 248);
   border-color: rgb(0, 127, 255) !important;
 }
+
+.chatbox {
+  flex: 1;
+  position: relative;
+}
+
+.message-composer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  border-top: 1px solid lightgrey;
+  padding: 1rem;
+}
+
+.message-text {
+  flex: 1;
+  resize: none;
+  border-radius: 0;
+  padding: 8px;
+  outline: none;
+  font: inherit;
+  margin-right: 16px;
+  height: 40px;
+  line-height: 22px;
+  border: 1px solid lightgrey;
+}
+
+.message-text:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.attach-icon {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  -webkit-box-pack: center;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin-right: 16px;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  color: rgb(0, 127, 255);
+}
+
+.attach-icon svg {
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentcolor;
+  flex-shrink: 0;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 2rem;
+  color: rgb(0, 127, 255);
+  background-size: 30px 30px;
+  background-color: transparent;
+  background-position: 0px 0px, 0px 15px, 15px -15px, -15px 0px;
+  background-image: linear-gradient(
+      45deg,
+      rgb(230, 230, 230) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, rgb(230, 230, 230) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgb(230, 230, 230) 75%),
+    linear-gradient(-45deg, transparent 75%, rgb(230, 230, 230) 75%);
+  transform: rotate(45deg);
+  background: transparent;
+  font-size: 24px;
+}
+
+.send {
+  height: 40px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  color: rgb(0, 127, 255);
+}
