@@ -1,9 +1,10 @@
 import React from "react";
 
-function Contact({ contact }) {
-  const { image, name, role, studentClass } = contact;
+function Contact({ contact, onClick }) {
+  const { id, image, name, role, studentClass } = contact;
+
   return (
-    <div className="contact">
+    <div id={id} className="contact" onClick={onClick}>
       <img
         className="avatar"
         src={image}
