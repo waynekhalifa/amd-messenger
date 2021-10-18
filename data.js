@@ -154,6 +154,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 1,
@@ -201,6 +202,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 5,
@@ -248,6 +250,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 1,
@@ -295,6 +298,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 1,
@@ -342,6 +346,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 1,
@@ -389,6 +394,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 1,
@@ -436,6 +442,7 @@ export const conversationData = {
       role: "Student",
       studentClass: "Language Primary 1",
       type: "message",
+      recieverid: 1,
       chat: [
         {
           id: 1,

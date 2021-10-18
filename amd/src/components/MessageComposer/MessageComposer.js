@@ -1,10 +1,8 @@
 import React from "react";
 import { useFilePicker } from "use-file-picker";
 
-function MessageComposer() {
-  const [openFileSelector, { filesContent, loading }] = useFilePicker({
-    accept: ".txt",
-  });
+function MessageComposer({ recieverid, handleNewMessage }) {
+  const [openFileSelector, { filesContent, loading }] = useFilePicker({});
 
   if (loading) {
     return <div>Loading...</div>;
@@ -12,7 +10,11 @@ function MessageComposer() {
 
   return (
     <div className="message-composer">
-      <textarea className="message-text" placeholder="Write a message" />
+      <textarea
+        id="message-text"
+        className="message-text"
+        placeholder="Write a message"
+      />
       <div className="attachments">
         <button onClick={() => openFileSelector()} className="attach-icon">
           <svg
@@ -33,7 +35,9 @@ function MessageComposer() {
           </div>
         ))}
       </div>
-      <button className="send">Send</button>
+      <button className="send" onClick={(e) => handleNewMessage(e, recieverid)}>
+        Send
+      </button>
     </div>
   );
 }

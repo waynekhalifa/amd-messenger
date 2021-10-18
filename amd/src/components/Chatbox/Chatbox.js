@@ -2,10 +2,9 @@ import React from "react";
 
 import MessageComposer from "../MessageComposer";
 
-const CURRENT_USER_ID = 2;
+import { CURRENT_USER_ID, MESSAGES } from "../../constants";
 
-function Chatbox({ selected }) {
-  console.log(selected);
+function Chatbox({ selected, handleNewMessage }) {
   return (
     <div className="chatbox">
       {selected !== null && (
@@ -34,9 +33,14 @@ function Chatbox({ selected }) {
               ))}
             </div>
           )}
+          <MessageComposer
+            handleNewMessage={handleNewMessage}
+            recieverid={
+              selected.type === MESSAGES ? selected.recieverid : selected.id
+            }
+          />
         </>
       )}
-      <MessageComposer />
     </div>
   );
 }
