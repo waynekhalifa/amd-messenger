@@ -24,8 +24,8 @@ export const conversationData = {
           timesent: "04:54 PM",
           date: "Thursday, 12 November 2020",
           seen: false,
-          senderid: 1,
-          recieverid: 2,
+          senderid: 2,
+          recieverid: 1,
         },
         {
           id: 3,

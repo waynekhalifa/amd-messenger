@@ -2,7 +2,10 @@ import React from "react";
 
 import MessageComposer from "../MessageComposer";
 
+const CURRENT_USER_ID = 2;
+
 function Chatbox({ selected }) {
+  console.log(selected);
   return (
     <div className="chatbox">
       {selected !== null && (
@@ -12,23 +15,25 @@ function Chatbox({ selected }) {
               <span>{selected.name}</span>
             </div>
           </div>
-          <div className="messages">
-            <div class="blocktime">Thursday, 12 November 2020</div>
-            <div class="content right">
-              <span class="text">test</span>
-              <span class="timesent">04:54 PM</span>
-              <span class="seen">Unread</span>
+          {selected.chat.length > 0 && (
+            <div className="messages">
+              <div class="blocktime">Thursday, 12 November 2020</div>
+              {selected.chat.map((message) => (
+                <div
+                  class={`content ${
+                    CURRENT_USER_ID === message.senderid ? "right" : "left"
+                  }`}
+                >
+                  <span class="text">{message.text}</span>
+                  <span class="timesent">{message.timesent}</span>
+                  {message.recieverid !== CURRENT_USER_ID &&
+                    message.seen === true && <span class="seen">Seen</span>}
+                  {message.recieverid !== CURRENT_USER_ID &&
+                    message.seen === false && <span class="seen">Unseen</span>}
+                </div>
+              ))}
             </div>
-            <div class="content right">
-              <span class="text">test again</span>
-              <span class="timesent">04:55 PM</span>
-              <span class="seen">Unread</span>
-            </div>
-            <div class="content left">
-              <span class="text">السلام عليكم</span>
-              <span class="timesent">02:40 PM</span>
-            </div>
-          </div>
+          )}
         </>
       )}
       <MessageComposer />
