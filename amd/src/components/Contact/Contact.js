@@ -1,20 +1,27 @@
 import React from "react";
 
-function Contact({ contact, onClick }) {
-  const { id, image, name, role, studentClass } = contact;
+const MESSAGE = "message";
 
+function Contact({ contact, onClick }) {
   return (
-    <div id={id} className="contact" onClick={onClick}>
-      <img
-        className="avatar"
-        src={image}
-        alt={`Picture ${name}`}
-        title={`Picture of ${name}`}
-      />
-      <div className="contact-info">
-        <div className="name">{name}</div>
-        <div className="role">{role}</div>
-        <div className="class">{studentClass}</div>
+    <div id={contact.id} className="conversation" onClick={onClick}>
+      <div className="header">
+        <img
+          className="avatar"
+          src={contact.image}
+          alt={`Picture ${contact.name}`}
+          title={`Picture of ${contact.name}`}
+        />
+        <div className="info">
+          <div className="name">{contact.name}</div>
+          {contact.type === MESSAGE && (
+            <div className="message">{contact.chat[0].text}</div>
+          )}
+        </div>
+      </div>
+      <div className="footer">
+        <div className="role">{contact.role}</div>
+        <div className="class">{contact.studentClass}</div>
       </div>
     </div>
   );

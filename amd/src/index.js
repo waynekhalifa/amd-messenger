@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-import Chatbox from "./components/Chatbox";
-import ContactList from "./components/ContactList";
-
-import { users } from "../../data";
+import Messenger from "./components/ContactList";
+import { conversationData } from "../../data";
 
 function App() {
-  const [conversation, setConversation] = useState([]);
-  const [selected, setSelected] = useState(null);
+  const [conversation, setConversation] = useState(null);
 
   const getMessages = () => {
-    setConversation(users);
-  };
-
-  const handleClick = (e, id) => {
-    let newSelected = conversation.filter((message) => message.id === id);
-
-    setSelected(newSelected[0]);
+    setConversation(conversationData);
   };
 
   useEffect(() => {
@@ -26,13 +17,10 @@ function App() {
 
   return (
     <>
-      {conversation.length === 0 ? (
+      {conversation === null ? (
         <p>Loading...</p>
       ) : (
-        <div className="container">
-          <ContactList users={conversation} handleClick={handleClick} />
-          <Chatbox selected={selected} />
-        </div>
+        <Messenger conversation={conversation} />
       )}
     </>
   );
